@@ -1,0 +1,23 @@
+{
+  "name": "cloud-flex",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Ventura92/cloud_flex#readme",
+  "bugs": {
+    "url": "https://github.com/Ventura92/cloud_flex/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ventura92/cloud_flex.git"
+  },
+  "license": "ISC",
+  "author": "Orhan Black",
+  "type": "commonjs",
+  "source": "index.html",
+  "scripts": {
+    "sass:watch": "sass --style=expanded --watch styles:app"
+  },
+  "devDependencies": {
+    "sass": "^1.86.0"
+  }
+}

@@ -1,0 +1,8 @@
+// компаненты страницы
+@forward 'normalize';
+@forward 'variables';
+@forward 'fonts';
+@forward 'basic';
+
+// Стили страницы
+@forward 'blocks/block-index';
