@@ -9,8 +9,37 @@
   <link rel="stylesheet" href="app/index.css">
 </head>
 <body>
-  <header class="header">
-    
+  <div class="burger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <header class="header" aria-label="section header">
+    <div class="container">
+      <nav class="header__nav nav" aria-label="header navigation">
+        <div class="nav__title">
+          <a class="nav__title-link" href="#!">CLOUD <span>FLEX</span></a>
+        </div>
+        <div class="nav__links">
+          <ul class="nav__links-list list list-reset" aria-label="header nav links">
+            <li class="list__item" aria-label="first link">
+              <a href="#!" class="list__item-link">about us</a>
+            </li>
+            <li class="list__item">
+              <a href="#!" class="list__item-link">contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__right-wrapper update">
+          <a href="#!" class="update__link" aria-label="update">update 2025</a>
+          <a href="#!" class="globe__icon" aria-label="globe-icon">
+            <svg class="globe__link-icon" aria-label="globe-img">
+              <use href="img/sprites.svg#globe-icon">
+            </svg>
+          </a>
+        </div>
+      </nav>
+    </div>
   </header>
 </body>
 </html>

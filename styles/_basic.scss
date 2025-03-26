@@ -1,8 +1,39 @@
 @use 'variables' as var;
 
+a{
+  text-decoration: none;
+  color: unset;
+}
+
 body{
   font-family: Roboto-Regular,serif;
   font-size: 1rem;
   font-weight: 400;
   background-color: var.$color-accent;
+}
+
+.container{
+  max-width: 1440px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 10px;
+}
+
+.list-reset{
+  list-style:none;
+  margin:0;
+  padding:0
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }

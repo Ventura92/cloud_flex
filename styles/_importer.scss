@@ -3,6 +3,8 @@
 @forward 'variables';
 @forward 'fonts';
 @forward 'basic';
+@forward 'mixins';
+@forward 'media';
 
 // Стили страницы
-@forward 'blocks/block-index';
+@forward 'header';
