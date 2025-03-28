@@ -1,0 +1,215 @@
+@use 'variables' as vars;
+@use 'sass:color';
+@use 'mixins' as m;
+@use 'media' as *;
+
+.hero{
+  position: relative;
+  max-width: 1260px;
+  height: 900px;
+  margin-inline: auto;
+  padding: 140px 0 0 0;
+  background: url('../img/extra/cloud_alpha.png') center center / contain no-repeat;
+
+  @include tablet{
+    height: 850px;
+    background: url('../img/extra/cloud_alpha.png') 0 5% / contain no-repeat;
+  }
+
+  @include mobile{
+    background: url('../img/extra/cloud_alpha.png') 0 13% / contain no-repeat;
+  }
+
+  @include mobile-mini{
+    background: url('../img/extra/cloud_alpha.png') 0 20% / contain no-repeat;
+
+  }
+
+  &__content{
+    position: relative;
+    max-width: 900px;
+    margin-inline: auto; 
+  }
+
+  &__title{
+    @include m.fluid-text(120,32);
+
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1;
+    color: vars.$color-black;
+    margin: 0;
+
+    &:not(:last-child){
+      margin-bottom: 170px;
+    }
+
+    @include tablet{
+      &:not(:last-child){
+        margin-bottom: 80px;
+      }
+    }
+
+    @include mobile{
+      &:not(:last-child){
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__main-btn{
+    @include m.fluid-text(28,16);
+
+    position: absolute;
+    right: -50px;
+    bottom: 20px;
+    display: block;
+    font-weight: 500;
+    color: vars.$color-white;
+    background-color: vars.$color-black;
+    border-radius: vars.$border-radius-90px;
+    padding: min(20px,3vw) min(40px,4vw);
+    transition: opacity vars.$transition-duration ease-in-out;
+
+    @include hover{
+      opacity: 0.8;
+    }
+
+    &:focus{
+      outline: none;
+    }
+
+    &:focus-visible{
+      outline: 2px solid vars.$color-white;
+    }
+
+    @include tablet{
+      position: static;
+      margin-bottom: 70px;
+      
+    }
+  }
+
+  &__notify{
+    @include m.d-flex(row,end,center,nowrap);
+    column-gap: 15px;
+
+    position: relative;
+    max-width: 680px;
+    margin-inline: auto;
+    background-color: color.adjust(vars.$color-white, $alpha: -0.80);
+    border-radius: vars.$border-radius-20px;
+
+    @include tablet{
+      @include m.d-flex(column,start,center,nowrap);
+
+      width: 100%;
+      height: fit-content
+    }
+  }
+
+  &__notify-img{
+    position: absolute;
+    left: -45px;
+    top: -60px;
+    width: 144px;
+    height: 214px;
+
+    @include tablet{
+      left: -10px;
+      top: -60px;
+      width: 93px;
+      height: 140px;
+    }
+
+    @include mobile-mini{
+      left: -10px;
+      top: -15px;
+      width: 80px;
+      height: 120px;
+    }
+  }
+
+  &__notify-text{
+    @include m.fluid-text(16,14);
+    
+    max-width: 455px;
+    height: 100%;
+    border-right: 1px solid vars.$color-white;
+    padding: 13px 10px;
+    margin: 0;
+
+    @include tablet{
+      max-width: 100%;
+      border-right: none;
+      padding-left: 90px;
+      border-bottom: 1px solid vars.$color-white;
+    }
+
+    @include mobile-mini{
+      padding-left: 65px;
+    }
+  }
+
+  &__notify-btn{
+    @include m.fluid-text(25,18);
+    
+    text-transform: uppercase;
+    border-radius: vars.$border-radius-20px;
+    transition: background-color vars.$transition-duration ease-in-out;
+    padding: 25px 15px;
+
+    @include tablet{
+      width: 100%;
+    }
+
+    @include hover{
+      background-color: vars.$color-white;
+      border-radius: inherit;
+    }
+
+    &:focus{
+      outline: none;
+    }
+
+    &:focus-visible{
+      outline: 2px solid vars.$color-black;
+    }
+  }
+
+  &__scroll{
+    @include m.fluid-text(16,14);
+
+    position: absolute;
+    left: 100px;
+    bottom: 200px;
+    font-weight: 500;
+    writing-mode: vertical-rl;
+    color: vars.$color-white;
+    cursor: pointer;
+
+    &:after{
+      content:'';
+      display: block;
+      position: absolute;
+      top: 100px;
+      left: 10px;
+      width: 1px;
+      height: 75px;
+      background-color: currentColor;
+    }
+
+    @include tablet{
+      left: 0;
+      bottom: 300px;
+    }
+
+    @include mobile-mini{
+      bottom: 260px;
+
+      &:after{
+        top: 90px;
+      }
+    }
+  }
+}
