@@ -1,0 +1,50 @@
+@use 'variables' as vars;
+@use 'sass:color';
+@use 'mixins' as m;
+@use 'media' as *;
+
+.work{
+
+  padding: 0 0 180px;
+
+  &__title{
+    @include m.fluid-text(60,30);
+    @include m.d-flex(row,center,center,nowrap);
+
+    color: vars.$color-white;
+    margin: 0;
+
+    &:not(:last-child){
+      margin-bottom: 80px;
+    }
+
+    @include mobile{
+      display: none;
+    }
+  }
+
+  &__wrapper{
+    max-width: 950px;
+    margin-inline: auto;
+
+    display: grid;
+    gap: 60px 80px;
+    place-items: center center;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-template-areas: 
+      'analysis design dev'
+      'maintenance testing integration';
+
+      @include mobile{
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+        gap: 15px 20px;
+        grid-template-areas: 
+          'dev design'
+          'analysis maintenance'
+          'testing integration';
+      }
+    
+  }
+}
