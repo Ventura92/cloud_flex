@@ -17,6 +17,7 @@
   }
 
   @include mobile{
+    height: 710px;
     background: url('../img/extra/cloud_alpha.png') 0 13% / contain no-repeat;
   }
 
@@ -202,6 +203,11 @@
     @include tablet{
       left: 0;
       bottom: 300px;
+    }
+
+    @include mobile{
+      left: -8px;
+      bottom: 200px;
     }
 
     @include mobile-mini{
