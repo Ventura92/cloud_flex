@@ -1,0 +1,59 @@
+@use 'variables' as vars;
+@use 'mixins' as m;
+@use 'media' as *;
+
+.experience{
+  padding: 200px 0;
+
+  @include tablet{
+    padding-top: 130px;
+    padding-bottom: 160px;
+  }
+
+  &__title{
+    @include m.fluid-text(60,30);
+    @include m.d-flex(row,center,center,nowrap);
+    
+    margin: 0;
+    color: vars.$color-white;
+
+    &:not(:last-child){
+      margin-bottom: 90px;
+    }
+
+    @include mobile{
+      &:not(:last-child){
+        margin-bottom: 80px;
+      }
+    }
+
+    @include mobile-mini{
+      &:not(:last-child){
+        margin-bottom: 60px;
+      }
+    }
+  }
+
+  &__cards-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: min(100px,4vw);
+    grid-area: 'experience-card-1 experience-card-2 experience-card-3';
+
+    @include mobile{
+      grid-template-columns: repeat(2,1fr);
+      grid-gap: 15px 10px;
+      grid-area: 'experience-card-1'
+        'experience-card-2 experience-card-3';
+    }
+
+    @include mobile-s{
+      grid-template-columns: 1fr;
+      grid-gap: 20px 15px;
+      grid-area: 'experience-card-1'
+        'experience-card-2'
+        'experience-card-3';
+    }
+  }
+
+}
