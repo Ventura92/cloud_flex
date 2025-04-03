@@ -3,7 +3,7 @@
 @use 'media' as *;
 
 .experience{
-  padding: 200px 0;
+  padding-top: 200px;
 
   @include tablet{
     padding-top: 130px;

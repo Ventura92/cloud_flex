@@ -1,0 +1,146 @@
+@use 'variables' as vars;
+@use 'sass:color';
+@use 'mixins' as m;
+@use 'media' as *;
+
+.testimonials{
+  padding: 200px 0 200px 0;
+  color: vars.$color-white;
+
+  @include tablet{
+    padding: 100px 0 200px 0;
+  }
+
+  @include mobile{
+    padding: 0 0 100px 0;
+
+  }
+
+  &__title{
+    @include m.d-flex(row,center,center,nowrap);
+    @include m.fluid-text(60,35);
+
+    margin: 0;
+
+    &:not(:last-child){
+      margin-bottom: 90px;
+    }
+
+    @include mobile{
+      &:not(:last-child){
+        margin-bottom: 60px;
+      }
+    }
+
+    @include mobile-mini{
+      &:not(:last-child){
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+}
+
+.slider{
+  position: relative;
+  height: 340px;
+
+  @include mobile-s{
+    height: 290px;
+  }
+
+  @include m.d-flex(row,center,center,nowrap);
+
+  &__left-btn,
+  &__right-btn{
+    @extend %slider-button;
+
+    position: absolute;
+    top: 100px;
+    z-index: 1;
+    transition: background-color vars.$transition-duration ease-in-out;
+
+    @include mobile{
+      top: unset;
+    }
+
+    @include hover{
+      background-color: color.adjust(vars.$color-white, $alpha: -0.50);
+      box-shadow: inset 0 5px 5px 0 rgba(0 0 0 / .2);
+      
+      .slider__left-btn-icon,
+      .slider__right-btn-icon{
+        fill: vars.$color-black;
+      } 
+    }
+  }
+
+  &__left-btn{
+    left: 5px;
+  }
+
+  &__right-btn{
+    right: 5px;
+  }
+
+  &__left-btn-icon, 
+  &__right-btn-icon{
+    width: 36px;
+    height: 23px;
+    fill: vars.$color-white;
+
+    @include mobile-mini{
+      width: 26px;
+    height: 13px;
+    }
+  }
+
+  &__left-btn-icon{
+    rotate: z 135deg;
+  }
+
+  &__right-btn-icon{
+    rotate: z -45deg;
+  }
+
+  &__pagination{
+    @include m.d-flex(row,center,center,nowrap);
+    column-gap: 10px;
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    translate: -50%;
+
+    &-item{
+      width: 13px;
+      aspect-ratio: 1;
+      transition: background-color vars.$transition-duration ease-in-out;
+      background-color: vars.$color-white;
+      border-radius: 50%;
+
+      &--active{
+        background-color: vars.$color-grey;
+      }
+
+      &:hover{
+        cursor: pointer;
+        scale: -.7;
+        background-color: vars.$color-grey;
+      }
+    }
+  }
+}
+
+%slider-button{
+  width: 67px;
+  height: 67px;
+  border-radius: vars.$border-radius-20px;
+  background-color: color.adjust(vars.$color-white, $alpha: -0.80);
+  rotate: z 45deg;
+
+  @include mobile-mini{
+    width: 40px;
+    height: 40px;
+  }
+}
