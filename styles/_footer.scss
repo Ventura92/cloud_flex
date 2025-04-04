@@ -1,0 +1,80 @@
+@use 'variables' as vars;
+@use 'sass:color';
+@use 'mixins' as m;
+@use 'media' as *;
+
+.footer{
+  padding: 30px 20px;
+  background-color: color.adjust(vars.$color-white, $alpha: -0.80);
+
+  @include mobile-mini{
+    padding: 15px;
+  }
+
+  &__wrapper{
+    @include m.d-flex(row,space-between,center,nowrap);
+
+    @include mobile-mini{
+      @include m.d-flex(column-reverse,center,center,nowrap);
+      row-gap: 20px;
+
+    }
+  }
+
+  &__terms{
+    @include m.fluid-text(20,14);
+    @include m.d-flex(row,start,center,wrap);
+    column-gap: 35px;
+
+    max-width: 350px;
+    color: vars.$color-white;
+
+    @include mobile-mini{
+      @include m.d-flex(row,center,center,wrap);
+
+      max-width: 100%;
+    }
+
+    &-link{
+      position: relative;
+      cursor: pointer;
+
+      &:before{
+        content: '';
+        position: absolute;
+        display: block;
+        top: 100%;
+        left: 50%;
+        translate: -50%;
+        width: 0;
+        height: 1px;background-color: currentColor;
+        transition: width vars.$transition-duration ease-in-out;
+      }
+
+      @include hover{
+        &::before{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__soc1als{
+    @include m.d-flex(row,center,center,nowrap);
+    column-gap: min(40px,5vw);
+  }
+
+  &__soc1als-icon{
+    width: 25px;
+    height: 23px;
+    cursor: pointer;
+    fill: vars.$color-white;
+    transition: fill vars.$transition-duration ease-in-out,
+    scale vars.$transition-duration ease-in-out;
+
+    @include hover{
+      fill: vars.$color-black;
+      scale: 1.3;
+    }
+  }
+}
