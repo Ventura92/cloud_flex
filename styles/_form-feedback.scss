@@ -1,0 +1,72 @@
+@use 'variables' as vars;
+@use 'mixins' as m;
+@use 'media' as *;
+
+.form-feedback{
+  @include m.d-flex(column,center,center,nowrap);
+  row-gap: 23px;
+
+  max-width: 60%;
+  margin-inline: auto;
+
+  @include mobile{
+    max-width: 100%;
+  }
+
+  &__title{
+    @include m.fluid-text(36,18);
+
+    margin: 0;
+    text-align: center;
+
+
+    &:not(:last-child){
+      margin-bottom: 12px;
+    }
+  }
+
+  &__label{
+    width: 100%;
+  }
+
+  &__input,
+  &__email,
+  &__text,
+  &__btn{
+    @include m.fluid-text(25,16);
+
+    width: 100%;
+    border: 1px solid vars.$color-black; 
+    border-radius: vars.$border-radius-20px;
+    color: vars.$color-black-transparent;
+    padding: 14px;
+    font-weight: 300;
+    transition: opacity vars.$transition-duration ease-in-out;
+
+    @include hover{
+      opacity: .6;
+    }
+
+    &::placeholder{
+      color: vars.$color-grey;
+    }
+
+    &:focus{
+      outline: none;
+    }
+  }
+
+  &__btn{
+    cursor: pointer;
+    background-color: vars.$color-black;
+    color: vars.$color-white;
+    transition: background-color vars.$transition-duration ease-in-out,
+    color vars.$transition-duration ease-in-out;
+
+    @include hover{
+      background-color: vars.$color-white;
+      color: vars.$color-black;
+      border: 1px solid vars.$color-black;
+    }
+  }
+}

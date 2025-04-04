@@ -63,7 +63,7 @@
         </div>
       </div>
     </section>
-    <section class="work-section">
+    <section class="work-section" aria-label="work section">
       <div class="container">
         <div class="work">
           <h2 class="work__title">How we work</h2>
@@ -116,7 +116,7 @@
         </div>
       </div>
     </section>
-    <section class="about-section">
+    <section class="about-section" aria-label="about section">
       <div class="container">
         <div class="about">
           <div class="about__wrapper">
@@ -147,7 +147,7 @@
         </div>
       </div>
     </section>
-    <section class="experience-section">
+    <section class="experience-section" aria-label="experience-section">
       <div class="experience">
         <div class="container">
           <h2 class="experience__title">Our experience</h2>
@@ -191,7 +191,7 @@
         </div>
       </div>
     </section>
-    <section class="testimonials-section">
+    <section class="testimonials-section" aria-label="testimonials section">
       <div class="container">
         <div class="testimonials">
           <h2 class="testimonials__title">Testimonials</h2>
@@ -206,7 +206,6 @@
                 </p>
               </blockquote>
             </figure>
-            
             <button class="slider__left-btn button">
               <svg class="slider__left-btn-icon" aria-label="arrow-img">
                 <use href="img/sprites.svg#arrow-icon">
@@ -228,6 +227,32 @@
           </div>
         </div>
       </div>
+    </section>
+    <section class="form-section" aria-label="form section">
+      <div class="container">
+        <div class="form">
+          <div class="form__wrapper">
+            <form class="form-feedback" action="#" aria-labelledby="form-title">
+              <h2 class="form-feedback__title">Ready to get started? Drop us a line!</h2>
+              <label class="form-feedback__label">
+                <input class="form-feedback__input" type="text" name="user-name"
+                 placeholder="Name" required="true" aria-required="true" inputmode="number">
+              </label>
+              <label class="form-feedback__label">
+                <input class="form-feedback__email" type="email" name="user-email"
+                 placeholder="Email" required="true" aria-required="true" inputmode="email">
+              </label>
+              <label class="form-feedback__label">
+                <input class="form-feedback__text" type="email" name="user-text"
+                 placeholder="What can we do for you?" required="true" aria-required="true">
+              </label>
+              <button class="form-feedback__btn button" type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="form-section__bg-cloud form-section__bg-cloud--left"></div>
+      <div class="form-section__bg-cloud form-section__bg-cloud--right"></div>
     </section>
   </main>
 </body>
