@@ -13,7 +13,7 @@
   }
 
   @include mobile{
-    padding-top: 60px;
+    padding-top: 30px;
   }
 }
 
@@ -21,7 +21,11 @@
   
   &__wrapper{
     @include m.d-flex(column,start,center,nowrap);
-    row-gap: min(60px,20vw)
+    row-gap: min(60px,20vw);
+
+    @include mobile{
+      row-gap: min(30px,20vw);
+    }
   }
 
   &__quality{

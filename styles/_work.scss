@@ -7,6 +7,10 @@
 
   padding: 0 0 180px;
 
+  @include mobile{
+    padding: 0 0 100px;
+  }
+
   &__title{
     @include m.fluid-text(60,30);
     @include m.d-flex(row,center,center,nowrap);
